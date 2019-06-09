@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Calculator</title>
+    <style></style>
+  </head>
+  <body>
+    <form>
+      Nr 1: <input type="text" id="value1" /> Nr 2:
+      <input type="text" id="value2" /> Operator:
+      <select name="operator" id="operator">
+        <option value="add">Add</option>
+        <option value="min">Minus</option>
+        <option value="div">Divide</option>
+        <option value="mul">Multiply</option>
+      </select>
+      <button type="button" onclick="calc()">Calculate</button>
+    </form>
+    <div id="results"></div>
+    <div id="results1"></div>
+    <script>
+      function calc() {
+        let a = parseInt(document.getElementById("value1").value);
+        let b = parseInt(document.getElementById("value2").value);
+        let operator = document.getElementById("operator").value;
+        let calculate;
+        let calculate1;
+
+        if (operator == "add") {
+          calculate = a + b;
+        } else if (operator == "min") {
+          calculate = a - b;
+        } else if (operator == "div") {
+          calculate = a / b;
+        } else if (operator == "mul") {
+          calculate = a * b;
+        }
+
+        switch (operator) {
+          case "add":
+            calculate1 = a + b;
+            break;
+          case "min":
+            calculate1 = a - b;
+            break;
+          case "div":
+            calculate1 = a / b;
+            break;
+          case "mul":
+            calculate1 = a * b;
+            breack;
+          default:
+            "NaN";
+        }
+        // ternary
+        // (operator == "add") ? (calculate2 = a + b) : ((operator == "min") ? (calculate2))
+
+        let results = (document.getElementById(
+          "results"
+        ).innerText = calculate);
+        let results1 = (document.getElementById(
+          "results1"
+        ).innerText = calculate1);
+      }
+    </script>
+  </body>
+</html>
