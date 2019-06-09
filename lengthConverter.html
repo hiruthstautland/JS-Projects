@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        margin: 0.5rem;
+        background-color: rgb(87, 86, 86);
+        color: green;
+      }
+      #input:focus {
+        box-shadow: 0;
+        border-color: white;
+      }
+      .form-group {
+        margin-right: 0 !important;
+        padding-right: 0 !important;
+      }
+      .card {
+        margin: 0.6em;
+        padding: 0.6em;
+        background-color: whitesmoke;
+        color: rgb(82, 80, 80);
+      }
+    </style>
+    <title>Converter</title>
+  </head>
+  <body>
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-6">
+          <h1 class="display-5">Length Converter</h1>
+        </div>
+        <div class="col-6">
+          <form>
+            <div class=" form-group m-1 p-2 mr-0">
+              <label for="input">Meter</label>
+              <input
+                id="input"
+                type="number"
+                class="form-control form-control-lg"
+                placeholder="Enter Meter.."
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row " id="output">
+        <div class="col-4">
+          <div class="yd card">
+            <div class="card-block">
+              <h4>Yards</h4>
+              <div id="ydOutput"></div>
+            </div>
+          </div>
+          <div class="in card">
+            <div class="card-block">
+              <h4>Inches</h4>
+              <div id="inchOutput"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="ft card">
+            <div class="card-block">
+              <h4>Foot</h4>
+              <div id="ftOutput"></div>
+            </div>
+          </div>
+          <div class="mi card">
+            <div class="card-block">
+              <h4>Mile</h4>
+              <div id="miOutput"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="km card">
+            <div class="card-block">
+              <h4>Kilometer</h4>
+              <div id="kmOutput"></div>
+            </div>
+          </div>
+          <div class="nm card">
+            <div class="card-block">
+              <h4>Nautical Mile</h4>
+              <div id="nmOutput"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById("output").style.visibility = "hidden";
+      document.getElementById("input").addEventListener("input", function() {
+        document.getElementById("output").style.visibility = "visible";
+        let meter = event.target.value;
+        let myRegEx = /^[0-9]\d{0, 9}(?:, \d{1,4})?$/;
+
+        let yd = (document.getElementById("ydOutput").innerText =
+          meter * 1.093613 + " yd");
+        let inch = (document.getElementById("inchOutput").innertext =
+          meter * 39.37008 + " In");
+        let ft = (document.getElementById("ftOutput").innerText =
+          meter * 3.28084 + " ft");
+        let mi = (document.getElementById("miOutput").innerText =
+          meter * 0.0006213712 + " mi");
+        let km = (document.getElementById("kmOutput").innerText =
+          meter * 0.001 + " km");
+        let nm = (document.getElementById("nmOutput").innerTex =
+          meter * 0.0005399565 + " nm");
+      });
+    </script>
+  </body>
+</html>
