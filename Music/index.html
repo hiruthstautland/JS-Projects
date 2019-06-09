@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tap for Music</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Courier New", Courier, monospace;
+      }
+      #app {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header h1 {
+        margin: 2em 0em 1em 0em;
+      }
+      .keys {
+        display: flex;
+      }
+      .keys div {
+        height: 10rem;
+        width: 8rem;
+        flex: 1;
+      }
+      .key1 {
+        background: pink;
+      }
+      .key2 {
+        background: yellow;
+      }
+      .key3 {
+        background: red;
+      }
+      .key4 {
+        background: blue;
+      }
+      .key5 {
+        background: green;
+      }
+      .key6 {
+        background: violet;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Tap for Music</h1>
+      </header>
+      <div class="visual">Visual</div>
+      <div class="keys">
+        <div class="key1 ">
+          <audio class="sound" src="./sounds/Bubble_Pop.mp3"></audio>
+        </div>
+        <div class="key2">
+          <audio class="sound" src="./sounds/Grenade.mp3"></audio>
+        </div>
+        <div class="key3">
+          <audio class="sound" src="./sounds/Shooting_star.mp3"></audio>
+        </div>
+        <div class="key4">
+          <audio class="sound" src="./sounds/Sms-alert.mp3"></audio>
+        </div>
+        <div class="key5">
+          <audio class="sound" src="./sounds/Time Warp.mp3"></audio>
+        </div>
+        <div class="key6">
+          <audio class="sound" src="./sounds/UFO-takeoff.mp3"></audio>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.addEventListener("load", () => {
+        const sounds = document.querySelectorAll(".sound");
+        const keys = document.querySelectorAll(".keys div");
+        //sOUNDS  mAP??
+        keys.forEach(key => {
+          key.addEventListener("click", function() {
+            sounds[4];
+          });
+        });
+      });
+      console.log(sounds);
+    </script>
+  </body>
+</html>
