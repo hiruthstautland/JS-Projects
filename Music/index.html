@@ -84,13 +84,15 @@
         const sounds = document.querySelectorAll(".sound");
         const keys = document.querySelectorAll(".keys div");
         //sOUNDS  mAP??
-        keys.forEach(key => {
+        console.log(sounds);
+
+        keys.forEach((key, index) => {
           key.addEventListener("click", function() {
-            sounds[4];
+            sounds[index].currentTime = 0;
+            sounds[index].play();
           });
         });
       });
-      console.log(sounds);
     </script>
   </body>
 </html>
