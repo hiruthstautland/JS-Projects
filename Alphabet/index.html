@@ -16,6 +16,7 @@
       }
       #app {
         height: 100vh;
+        width: 100vw;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -26,28 +27,37 @@
       }
       .keys {
         display: flex;
+        color: rgb(212, 181, 181);
+        flex-flow: column wrap;
+        align-content: space-around;
       }
       .keys div {
-        height: 10rem;
-        width: 8rem;
+        margin: 0.5em;
+        padding: 1em;
+        height: 8em;
+        width: 8em;
         flex: 1;
+        display: flex;
+        justify-content: center;
+        font-weight: bolder;
+        font-size: 2em;
       }
-      .key1 {
+      .keyA {
         background: pink;
       }
-      .key2 {
+      .keyB {
         background: yellow;
       }
-      .key3 {
+      .keyC {
         background: red;
       }
-      .key4 {
+      .keyD {
         background: blue;
       }
-      .key5 {
+      .keyE {
         background: green;
       }
-      .key6 {
+      .keyF {
         background: violet;
       }
     </style>
@@ -59,23 +69,29 @@
       </header>
       <div class="visual">Visual</div>
       <div class="keys">
-        <div class="key1">
-          <audio class="sound" src="./sounds/Shooting_star.mp3"></audio>
-        </div>
-        <div class="key2">
-          <audio class="sound" src="./sounds/Sms-alert.mp3"></audio>
-        </div>
-        <div class="key3">
-          <audio class="sound" src="./sounds/Time Warp.mp3"></audio>
-        </div>
-        <div class="key4">
-          <audio class="sound" src="./sounds/UFO-takeoff.mp3"></audio>
-        </div>
-        <div class="key5">
+        <div class="keyA ">
+          A
           <audio class="sound" src="./sounds/Bubble_Pop.mp3"></audio>
         </div>
-        <div class="key6">
-          <audio class="sound" src="./sounds/Grenade.mp3"></audio>
+        <div class="keyB">
+          B
+          <audio class="sound" src="./sounds/Grenade.mp3">B</audio>
+        </div>
+        <div class="keyC">
+          C
+          <audio class="sound" src="./sounds/Shooting_star.mp3">C</audio>
+        </div>
+        <div class="keyD">
+          D
+          <audio class="sound" src="./sounds/Sms-alert.mp3">D</audio>
+        </div>
+        <div class="keyE">
+          E
+          <audio class="sound" src="./sounds/Time Warp.mp3">E</audio>
+        </div>
+        <div class="keyF">
+          F
+          <audio class="sound" src="./sounds/UFO-takeoff.mp3" F></audio>
         </div>
       </div>
     </div>
@@ -84,6 +100,7 @@
         const sounds = document.querySelectorAll(".sound");
         const keys = document.querySelectorAll(".keys div");
         //sOUNDS  mAP??
+        console.log(sounds);
 
         keys.forEach((key, index) => {
           key.addEventListener("click", function() {
@@ -91,6 +108,15 @@
             sounds[index].play();
           });
         });
+        // Generate random hex color
+        // function getRandomColor() {
+        //   let letters = "0123456789ABCDEF";
+        //   let color = "#";
+        //   for (let i = 0; i < 6; i++) {
+        //     color += letters[Math.floor(Math.random() * 16)];
+        //   }
+        //   return color;
+        // }
       });
     </script>
   </body>
