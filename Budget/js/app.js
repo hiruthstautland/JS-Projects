@@ -18,7 +18,58 @@ class UI {
   }
   //submit budget method
   submitBudgetForm() {
-    console.log("hello from es6");
+    const value = this.budgetInput.value;
+    let budget = this.budgetFeedback.classList;
+    if (value === "" || value < 0) {
+      budget.add("showItem");
+      this.budgetFeedback.innerHTML = `<p>Enter a valid value!</p>`;
+      // setTimeout(function() {
+      //   budget.remove("showItem");
+      // }, 1000);
+    } else {
+      this.budgetAmount.textContent = value;
+      this.budgetInput.value = "";
+      this.showBalance();
+    }
+  }
+  //Show Balance
+  showBalance() {
+    const expense = this.totalExpense();
+    const total = parseInt(this.budgetAmount.textContent) - expense;
+    this.balanceAmount.textContent = total;
+    // if (total < 0) {
+    //   this.balance.classList.remove("showGreen", "showBlack");
+    //   this.balance.classList.add("showRed");
+    // } else if (total > 0) {
+    //   this.balance.classList.remove("showGreen", "showRed");
+    //   this.balance.classList.add("showGreen");
+    // } else if (total === 0) {
+    //   this.balance.classList.remove("showRed", "showBlack");
+    //   this.balance.classList.add("showBlack");
+    // }
+
+    // switch (total) {
+    //   case total > 0:
+    //     this.balance.classList.add("showGreen");
+    //     break;
+    //   case total < 0:
+    //     this.balance.classList.add("showRed");
+    //     break;
+    //   default:
+    //     this.balance.classList.add("showBlack");
+    // }
+    total < 0
+      ? this.balance.classList.add("showRed")
+      : total > 0
+      ? this.balance.classList.add("showGreen")
+      : this.balance.classList.add("showBlack");
+  }
+  //submit expense form
+  submitExpenseForm() {}
+  //total expense
+  totalExpense() {
+    let total = 400;
+    return total;
   }
 }
 function eventListeners() {
@@ -37,6 +88,7 @@ function eventListeners() {
   //expense form submit
   expenseForm.addEventListener("submit", function(event) {
     event.preventDefault();
+    ui.submitExpenseForm;
   });
   //expense click
   expenseList.addEventListener("click", function(event) {});
