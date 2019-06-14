@@ -19,17 +19,18 @@ class UI {
   //submit budget method
   submitBudgetForm() {
     const value = this.budgetInput.value;
-    let budget = this.budgetFeedback.classList;
+    let budgetError = this.budgetFeedback.classList;
     if (value === "" || value < 0) {
-      budget.add("showItem");
+      budgetError.add("showItem");
       this.budgetFeedback.innerHTML = `<p>Enter a valid value!</p>`;
-      // setTimeout(function() {
-      //   budget.remove("showItem");
-      // }, 1000);
+      setTimeout(function() {
+        budgetError.remove("showItem");
+      }, 1000);
     } else {
       this.budgetAmount.textContent = value;
       this.budgetInput.value = "";
       this.showBalance();
+      // }
     }
   }
   //Show Balance
@@ -37,6 +38,7 @@ class UI {
     const expense = this.totalExpense();
     const total = parseInt(this.budgetAmount.textContent) - expense;
     this.balanceAmount.textContent = total;
+
     // if (total < 0) {
     //   this.balance.classList.remove("showGreen", "showBlack");
     //   this.balance.classList.add("showRed");
@@ -65,13 +67,42 @@ class UI {
       : this.balance.classList.add("showBlack");
   }
   //submit expense form
-  submitExpenseForm() {}
+  submitExpenseForm() {
+    const expenseName = this.expenseInput.value;
+    const expenseAmount = this.amountInput.value;
+    let expenseError = this.expenseFeedback.classList;
+    // || = or
+    if (expenseName === "" || expenseAmount === "" || expenseAmount < 0) {
+      expenseError.add("showItem");
+      this.expenseFeedback.innerHTML = `<p>Please enter the expense and an amount!</p>`;
+      setTimeout(function() {
+        expenseError.remove("showItem");
+      }, 1000);
+    } else {
+      let amount = parseInt(expenseAmount);
+      this.expenseInput = "";
+      this.amountInput = "";
+
+      let expense = {
+        id: this.itemID,
+        title: expenseName,
+        amount: amount
+      };
+      this.itemID++;
+      this.itemList.submitExpenseForm(expense);
+      this.addExpense(expense);
+      //Add show current balance
+    }
+  }
+  //Add Expense method w/object
+  addExpense(expense) {}
   //total expense
   totalExpense() {
     let total = 400;
     return total;
   }
 }
+
 function eventListeners() {
   const budgetForm = document.getElementById("budget-form");
   const expenseForm = document.getElementById("expense-form");
@@ -79,7 +110,6 @@ function eventListeners() {
 
   //New instance of UI class
   const ui = new UI();
-
   //budget form submit
   budgetForm.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -88,11 +118,12 @@ function eventListeners() {
   //expense form submit
   expenseForm.addEventListener("submit", function(event) {
     event.preventDefault();
-    ui.submitExpenseForm;
+    ui.submitExpenseForm();
   });
   //expense click
   expenseList.addEventListener("click", function(event) {});
 }
+
 document.addEventListener("DOMContentLoaded", function() {
   eventListeners();
 });
