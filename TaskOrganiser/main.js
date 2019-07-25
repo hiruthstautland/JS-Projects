@@ -52,11 +52,18 @@ class UI{
 
         row.innerHTML = `
         <td> ${task.tittel} </td>
+        <td> ${task.detaljer} </td>
         <td> ${task.ansvarlig} {</td>
         <td> ${task.klassifisering} </td>
         <td><a href="#" class="btn btn-danger btn-sm delete"> X </a></td>
         `;
         list.appendChild(row);
+    }
+    static clearFields(){
+        document.querySelector('#tittel').value = "";
+        document.querySelector('#detaljer').value = "";
+        document.querySelector('#ansvarlig').value = "";
+        document.querySelector('#klassifisering').value = "";
     }
 }
 //Store Class: Handles Local Storage
@@ -78,5 +85,10 @@ document.querySelector('#task-form').addEventListener('submit', (e) =>
     const task = new Task(tittel, detaljer, ansvarlig, klassifisering)
 
     console.log(task);
+    // Add task to UI
+    UI.addTaskToList(task)
+
+    //Clear fields after submitting task
+    UI.clearFields();
 } )
 //Event Remove Task

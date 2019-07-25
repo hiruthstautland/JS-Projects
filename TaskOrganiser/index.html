@@ -15,8 +15,8 @@
     <body>
         <div class="container mt-4">
             <h1 class="display-5 text-center mb-4">
-                <i class="fas fa-book-open text-warning"></i>
-                <span class="text-danger" >Oppgave  </span>Liste
+                <i class="fas fa-tasks text-success"></i>
+                Vår<span class="text-danger" >Oppgave</span>Liste
             </h1>
             <form id="task-form">
                 <div class="form-group">
@@ -40,9 +40,11 @@
             <table class="table table-stripped mt-4">
                 <thead>
                     <th>Tittel</th>
+                    <th>Beskrivelse</th> <!--fiks.ellers kalt detaljer -->
+                    
                     <th>Ansvarlig</th>
                     <th>Klassifisering</th>
-                    <th> ---delete button ---</th>
+                    <th><i class="far fa-trash-alt pl-3"></i></th>
                 </thead>
                 <tbody id="task-list"></tbody>
             </table>
