@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+        crossorigin="anonymous"
+      />        <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+        <title> Task Organiser</title>
+<link rel="stylesheet" href="style.css" class="style">
+    </head>
+    <body>
+        <div class="container mt-4">
+            <h1 class="display-5 text-center mb-4">
+                <i class="fas fa-book-open text-warning"></i>
+                <span class="text-danger" >Oppgave  </span>Liste
+            </h1>
+            <form id="task-form">
+                <div class="form-group">
+                        <label for="tittel">Tittel</label>
+                        <input type="text" id="tittel" class="form-control">
+                </div>
+                <div class="form-group">
+                        <label for="detaljer">Detaljer</label>
+                        <input type="text" id="detaljer" class="form-control">
+                </div>
+                <div class="form-group">
+                        <label for="ansvarlig">Ansvarlig</label>
+                        <input type="text" id="ansvarlig" class="form-control">
+                </div>
+                <div class="form-group">
+                        <label for="klassifisering">Klassifisering</label>
+                        <input type="text" id="klassifisering" class="form-control">
+                </div>
+               <input type="submit" value="Add Task" class="btn btn-block btn-success">
+            </form>
+            <table class="table table-stripped mt-4">
+                <thead>
+                    <th>Tittel</th>
+                    <th>Ansvarlig</th>
+                    <th>Klassifisering</th>
+                    <th> ---delete button ---</th>
+                </thead>
+                <tbody id="task-list"></tbody>
+            </table>
+        </div>
+        <footer>
+        <script src="main.js"></script>
+        </footer>
+    </body>
+</html>
