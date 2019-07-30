@@ -1,0 +1,77 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	letter-spacing: .1em;
+}
+
+body {
+	background-color: #24272e;
+}
+header {
+	background: white;
+	padding: 2em;
+}
+h1 {
+	color: #24272e;
+	text-align: center;
+	font-size: 4em;
+}
+.score-board {
+	margin: .8em auto;
+	width: 8em;
+	padding: .8em;
+	border: .1em solid white;
+	border-radius: 2px;
+	text-align: center;
+	font-size: 5em;
+	color: white;
+}
+.badge {
+	padding: .8em;
+	margin: 1em;
+	background: rgba(218, 61, 61, 0.897);
+	color: white;
+	font-size: 18px;
+	top: 12.6em;
+}
+#user-label {
+	position: absolute;
+	width: 10em;
+	left: 4em;
+}
+#computer-label {
+	position: absolute;
+	width: 10em;
+	right: 4em;
+}
+.result {
+	font-size: 4em;
+	color: white;
+}
+.result > p {
+	text-align: center;
+	font-weight: bold;
+}
+.choices {
+	margin: .6em;
+	text-align: center;
+}
+.choice {
+	padding: 2em;
+	margin: 1.8em;
+	display: inline-block;
+	border: .2em solid white;
+	border-radius: 50%;
+	color: rgb(116, 49, 49);
+	transition: all .3s ease;
+}
+#action-message {
+	padding: 1em;
+	margin: .1em;
+	text-align: center;
+	font-size: 3em;
+	font-weight: bold;
+	color: white;
+}
