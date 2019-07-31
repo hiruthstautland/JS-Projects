@@ -5,29 +5,35 @@
 <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+    <!-- Make css  in px -->
     <body>
         <header>
             <h1>Rock Paper Scissor Game</h1>
         </header>
-        <div class="score-board">
-            <div id="user-label" class="badge">User</div>
-            <div id="computer-label" class="badge">Computer</div>
-            <span id="user-score">0</span> : <span id="computer-score">0</span>
+        <div class="wrapper-1">
+                <div id="user-choice">User Choice</div>
+                <div id="user-label" class="badge">User</div>
+                <div class="score-board">
+                    <span id="user-score">0</span> : <span id="computer-score">0</span>
+                </div>
+                <div id="computer-choice">Computer Choice</div>
+                <div id="computer-label" class="badge">Computer</div>
         </div>
-        <div class="result">
-            <p>Paper covers Rock. You win!</p>
+            <div class="result">
+            <p>Good luck!</p>
         </div>
         <div class="choices">
             <div class="choice" id="rock">
-                    <i class="fa fa-hand-rock-o fa-5x" aria-hidden="true"></i>
+                    <i class="fa fa-hand-rock-o fa-3x" aria-hidden="true"></i>
             </div>
             <div class="choice" id="paper">
-                    <i class="fa fa-hand-paper-o fa-5x" aria-hidden="true"></i>
+                    <i class="fa fa-hand-paper-o fa-3x" aria-hidden="true"></i>
             </div>
             <div class="choice" id="scissor">
-                    <i class="fa fa-hand-scissors-o fa-5x" aria-hidden="true"></i>
+                    <i class="fa fa-hand-scissors-o fa-3x" aria-hidden="true"></i>
             </div>
         </div>
         <p id="action-message">Action Message!</p>
+        <script src="app.js"></script>
     </body>
 </html>
