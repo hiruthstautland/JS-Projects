@@ -37,14 +37,21 @@
     </header>
     <main class="container">
         <form>
-            <fieldset class="form-group">
+            <fieldset class="form-group">   
                 <label for="searchTerm">Search</label>
                 <input type="text" class="form-control" id="searchTerm" placeholder="what do you want to watch?">
             </fieldset>
             <button type="submit" class="btn btn-primary">Search</button>
         </form>
-        <section class="mt-2 row" id="results">
-
+        <section class="mt-2 row flex  justify-content-around align-items-start">
+            <section class="col-8 row">
+                <h1 class="col-12" >Search Results</h1>
+                    <section class="col-12 row" id="results"></section>
+            </section>
+            <section class="col-4 row">
+                 <h1 class="col-12 row" >Watch Later</h1>
+                <section class="col-12 row" id="watchLater"></section>
+           </section>
         </section>
     </main>
     <script src="main.js"></script>
